@@ -1,13 +1,17 @@
 import React from "react";
 import "./App.css";
-import { Button } from "react-bootstrap";
 //import components
-import Header from "./components/Header";
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App boxy">
       <Header />
+      <div>
+        <p>cards placeholder</p>
+      </div>
+      <Footer className="page-footer" />
     </div>
   );
 }

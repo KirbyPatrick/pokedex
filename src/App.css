@@ -1,0 +1,26 @@
+.boxy {
+  border: dotted red;
+}
+
+.test {
+  background-color: black;
+}
+
+.logo {
+  height: 75px;
+  width: auto;
+}
+
+.hearderBackground {
+  background-color: #563d7c;
+}
+
+.App {
+  width: auto;
+  height: 100%;
+}
+
+html,
+body {
+  height: 100%;
+}
