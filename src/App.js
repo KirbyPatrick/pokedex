@@ -9,8 +9,9 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Footer className="page-footer" />
+
       <CardList />
+      {/* <Footer className="page-footer" /> */}
     </div>
   );
 }

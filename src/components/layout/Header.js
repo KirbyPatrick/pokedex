@@ -4,8 +4,8 @@ import logo from "../../img/logo.png";
 export default class Header extends Component {
   render() {
     return (
-      <div class="container-fluid">
-        <div class="row bg-danger">
+      <div className="container-fluid">
+        <div className="row bg-danger">
           <div className="col-md">
             <img className="logo" src={logo} alt="" />
           </div>

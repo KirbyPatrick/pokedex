@@ -1,22 +1,42 @@
+import Axios from "axios";
 import React, { Component } from "react";
 
 export default class Card extends Component {
+  state = {
+    name: "",
+    image: "",
+    url: "",
+    pokemonData: "",
+  };
+
+  async componentDidMount() {
+    const { name, pokemonURL } = this.props;
+    this.setState({ name: name, url: pokemonURL });
+    const res = await Axios.get(this.state.url);
+    this.setState({ pokemonURL: res });
+  }
+
   render() {
+    //props
+
+    //set pokemon image size
     const imageSize = {
-      height: "150px",
-      width: "150px",
+      height: "250px",
+      width: "250px",
     };
     return (
-      <div class="col-lg-3 col-md-4 card text-left m-4">
+      <div className="col-xl-2 col-lg-4 mx-4 mt-4">
         <img
-          class="card-img-top img-thumbnail rounded mx-auto d-block"
+          className="card-img-top img-thumbnail rounded mx-auto d-block"
           src="https://via.placeholder.com/150x150"
-          alt="Image of Pokemon Name"
+          alt="pokemon"
           style={imageSize}
         />
-        <div class="card-body">
-          <h4 class="card-title text-center">Pokemon Name</h4>
-          <p class="card-text text-center">Pokemon Type</p>
+        <div className="card-body">
+          <h4 className="card-title text-center text-capitalize">
+            {this.state.name}
+          </h4>
+          <p className="card-text text-center">{this.state.url}</p>
         </div>
       </div>
     );
