@@ -1,32 +1,32 @@
 import React, { Component } from "react";
+import axios from "axios";
+// Import Componnents
 import Card from "./Card";
 
 export default class CardList extends Component {
   state = {
-    loading: true,
+    url: "https://pokeapi.co/api/v2/pokemon",
     pokemon: null,
-    testing: null,
   };
 
   async componentDidMount() {
-    const url = "https://pokeapi.co/api/v2/pokemon";
-    const response = await fetch(url);
-    const pokemon = await response.json();
-    this.setState({ loading: false });
-    this.setState({ pokemon: pokemon });
-    this.setState({ testing: pokemon.results[0].name });
-    // console.log("pokemon: ", pokemon);
-    console.log("test: ", pokemon.results[0].name);
+    const res = await axios.get(this.state.url);
+    this.setState({ pokemon: res.data["results"] });
   }
 
   render() {
-    console.log("this: ", this.state);
+    console.log("state.pokemon.results: ", this.state.pokemon);
     return (
       <React.Fragment>
-        {/* {this.state.loading ? <p>loading...</p> : <p>test</p>} */}
-
-        {/* <h1>{pokemon.results[0].name}</h1> */}
-        <h1> {this.state.testing} </h1>
+        {this.state.pokemon ? (
+          <div className="row">
+            {this.state.pokemon.map((pokemon) => (
+              <Card />
+            ))}
+          </div>
+        ) : (
+          <h1>loading....</h1>
+        )}
       </React.Fragment>
     );
   }
