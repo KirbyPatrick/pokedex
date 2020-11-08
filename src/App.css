@@ -24,3 +24,8 @@ html,
 body {
   height: 100%;
 }
+
+.thumbnail-size {
+  width: 185px;
+  height: 185px;
+}

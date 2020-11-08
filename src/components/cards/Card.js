@@ -25,12 +25,19 @@ export default class Card extends Component {
 
   render() {
     return (
-      <div className="col-md-3 col-sm-6 mb-5">
+      <div className="col-md-2 col-sm-6 mx-2 my-4">
         <div className="card">
           <div className="card-header">{this.state.pokemonIndex}</div>
-          <img src={this.state.imageUrl} alt="" className="card-img-top" />
+          <img
+            src={this.state.imageUrl}
+            alt=""
+            className="card-img-top thumbnail-size rounded mx-auto d-block"
+          />
           <div className="card-body">
-            <p className="card-text">{this.props.name}</p>
+            <h5 className="card-text text-center">
+              {this.props.name.charAt(0).toUpperCase() +
+                this.props.name.slice(1)}
+            </h5>
           </div>
         </div>
       </div>
