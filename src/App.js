@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
 //import components
 import Header from "./components/layout/Header";
@@ -13,9 +13,7 @@ function App() {
       <Header />
       <Router>
         <Switch>
-          <Route path="/pokemon">
-            <Pokemon />
-          </Route>
+          <Route exact path="/pokemon/:pokemonIndex" component={Pokemon} />
           <Route path="/">
             <Dashboard />
           </Route>
