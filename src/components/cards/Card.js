@@ -34,7 +34,7 @@ export default class Card extends Component {
             <img
               className="card-img-top thumbnail-size rounded mx-auto d-block"
               src={loading}
-              alt=""
+              alt="Loading image"
             />
           ) : null}
           <img

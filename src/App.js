@@ -1,17 +1,26 @@
 import React from "react";
 import "./App.css";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
 //import components
 import Header from "./components/layout/Header";
-import Footer from "./components/layout/Footer";
-import CardList from "./components/cards/CardList";
+import Dashboard from "./components/layout/Dashboard";
+import Pokemon from "./components/cards/Pokemon";
 
 function App() {
   return (
     <div className="App">
       <Header />
-
-      <CardList />
-      {/* <Footer className="page-footer" /> */}
+      <Router>
+        <Switch>
+          <Route path="/pokemon">
+            <Pokemon />
+          </Route>
+          <Route path="/">
+            <Dashboard />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
