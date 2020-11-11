@@ -4,10 +4,10 @@ import { useParams } from "react-router-dom";
 
 export default class Pokemon extends Component {
   state = {
-    url: "",
     pokemonIndex: "",
     baseExperience: "",
     abilities: "",
+    name: "",
   };
 
   async componentDidMount() {
@@ -15,16 +15,15 @@ export default class Pokemon extends Component {
     const { pokemonIndex } = this.props.match.params;
     console.log("index ", pokemonIndex);
     //Passing the api call the pokemonIndex value to state.
-    this.setState({
-      url: `https://pokeapi.co/api/v2/pokemon/${pokemonIndex}/`,
-    });
+
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/${pokemonIndex}/`)
       .then((res) => {
         const pokeData = res.data;
         const baseExperience = pokeData.base_experience;
         const abilities = pokeData.abilities[1].ability.name;
-        this.setState({ baseExperience, abilities });
+        const name = pokeData.forms[0].name;
+        this.setState({ baseExperience, abilities, name });
       });
   }
 
@@ -34,6 +33,7 @@ export default class Pokemon extends Component {
         <p>test......</p>
         <p>{this.state.baseExperience}</p>
         <p>{this.state.abilities}</p>
+        <p>{this.state.name}</p>
       </div>
     );
   }
