@@ -37,3 +37,12 @@ a:hover {
   text-decoration: none;
   cursor: pointer;
 }
+
+.loading-gif-style {
+  height: 100px;
+  width: 150px;
+}
+
+.pokemon-image-size {
+  height: 250px;
+}

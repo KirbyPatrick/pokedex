@@ -34,7 +34,7 @@ export default class Card extends Component {
             <div className="card-header">{this.state.pokemonIndex}</div>
             {this.state.imageLoading ? (
               <img
-                className="card-img-top thumbnail-size rounded mx-auto d-block"
+                className="card-img-top thumbnail-size rounded mx-auto d-block loading-gif-style"
                 src={loading}
                 alt="Loading image"
               />
