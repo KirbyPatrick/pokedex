@@ -108,8 +108,8 @@ export default class Pokemon extends Component {
         </div>
 
         {/* Stats Table */}
-        <table class="table">
-          <thead className="thead-dark">
+        <table class="table ">
+          <thead className="thead-dark ">
             <tr>
               <th scope="col">Stat</th>
               <th scope="col">Value</th>
@@ -131,14 +131,6 @@ export default class Pokemon extends Component {
             <tr>
               <th scope="row">speed</th>
               <td>{this.state.stats.speed}</td>
-            </tr>
-            <tr>
-              <th scope="row">specialAttack</th>
-              <td>{this.state.stats.specialAttack}</td>
-            </tr>
-            <tr>
-              <th scope="row">specialDefense</th>
-              <td>{this.state.stats.specialDefense}</td>
             </tr>
           </tbody>
         </table>
