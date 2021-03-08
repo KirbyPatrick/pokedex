@@ -15,9 +15,10 @@ export default class CardList extends Component {
   }
 
   render() {
-    // console.log("state.pokemon.results: ", this.state.pokemon);
+    console.log("state.pokemon.results: ", this.state.pokemon);
     return (
       <React.Fragment>
+        <input type="text" placeholder="Find Pokemon..." />
         {this.state.pokemon ? (
           <div className="row d-flex justify-content-center">
             {this.state.pokemon.map((pokemon) => (

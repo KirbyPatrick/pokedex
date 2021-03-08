@@ -17,7 +17,7 @@ export default class Card extends Component {
     ];
     const imageUrl = `https://github.com/pokeAPI/sprites/blob/master/sprites/pokemon/${pokemonIndex}.png?raw=true`;
 
-    console.log("index:", pokemonURL);
+    // console.log("index:", pokemonURL);
 
     this.setState({
       name,
